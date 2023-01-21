@@ -5,40 +5,95 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Tip calculator app</title>
+  <link rel="stylesheet" href="style.css">
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <title>Frontend Mentor | Tip calculator app</title>
 </head>
 <body>
+  <header>
+    <h1>
+      <span>SPLI</span>
+      <span>TTER</span>
+    </h1>
+  </header>
 
-  Bill
+  <main id="calculator-main">
+    <section class="input-section">
+      <div class="input-single-part">
+        <h2>Bill</h2>
+        <input type="number" name="bill" id="bill-field" class="input-number" placeholder="0">
+      </div>
 
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
+      <div class="input-single-part">
+        <h2>Select Tip %</h2>
 
-  Number of People
+        <div class="tips-grid">
+          <div class="tip-option">
+            <input type="radio" name="tip-value" id="tip-1" class="tip-input">
+            <label for="tip-1" class="tip-label"><span>5%</span></label>
+          </div>
 
-  Tip Amount
-  / person
+          <div class="tip-option">
+            <input type="radio" name="tip-value" id="tip-2" class="tip-input">
+            <label for="tip-2" class="tip-label"><span>10%</span></label>
+          </div>
 
-  Total
-  / person
+          <div class="tip-option">
+            <input type="radio" name="tip-value" id="tip-3" class="tip-input">
+            <label for="tip-3" class="tip-label"><span>15%</span></label>
+          </div>
 
-  Reset
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+          <div class="tip-option">
+            <input type="radio" name="tip-value" id="tip-4" class="tip-input">
+            <label for="tip-4" class="tip-label"><span>25%</span></label>
+          </div>
+
+          <div class="tip-option">
+            <input type="radio" name="tip-value" id="tip-5" class="tip-input">
+            <label for="tip-5" class="tip-label"><span>50%</span></label>
+          </div>
+
+          <div class="tip-option">
+            <input type="radio" name="tip-value" id="tip-6" class="tip-input">
+            <label for="tip-6" class="tip-label">
+              <input type="number" name="tip-value-custom" id="tip-input-custom" placeholder="Custom">
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="input-single-part">
+        <h2>Number of People</h2>
+        <input type="number" name="people-number" id="people-number" class="input-number" min="0" step="1" placeholder="0">
+      </div>
+    </section>
+
+    <section class="summary-section">
+      <div class="summary-grid">
+        <div class="desc">
+          <h2>Tip Amount</h2>
+          <p> / person</p>
+        </div>
+        <div class="amount">$<span class="tip-per-person">4.27</span></div>
+        <div class="desc">
+          <h2>Total</h2>
+          <p> / person</p>
+        </div>
+        <div class="amount">$<span class="tip-total">32.79</span></div>
+      </div>
+      <button class="reset-button">RESET</button>
+    </section>
+  </main>
+
+  <footer>
+    <div class="attribution">
+      <p>
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      </p>
+      <p>
+        Coded by <a href="https://github.com/neyluu" target="_blank">Neyluu</a>.
+      </p>
+    </div>
+  </footer>
 </body>
 </html>
