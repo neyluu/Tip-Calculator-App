@@ -53,18 +53,34 @@ h1 {
     color: var(--cyan-grayish-dark);
 }
 
+#bill-field {
+    background-image: url(images/icon-dollar.svg);
+}
+#people-number {
+    background-image: url(images/icon-person.svg);
+}
+
 .input-number {
     width: 100%;
-    border-radius: var(--border-radius-200);
-    background-color: var(--cyan-grayish-very-light);
-    font-weight: bold;
-    color: var(--cyan-very-dark);
     padding: 5px var(--spacing-200);
     margin-top: 5px;
     text-align: right;
+    color: var(--cyan-very-dark);
+
+    border-radius: var(--border-radius-200);
+    background-color: var(--cyan-grayish-very-light);
+    
+    background-repeat: no-repeat;
+    background-position-x: .5em;
+    background-position-y: 50%;
+    font-weight: bold;
 
     outline: none;
     border: none;
+}
+
+.input-number::placeholder {
+    color: var(--cyan-grayish);
 }
 
 .tips-grid {
@@ -93,6 +109,7 @@ h1 {
     color: var(--cyan-grayish-very-light);
     padding: .2em;
     border-radius: var(--border-radius-200);
+    transition: all .2s;
 }
 
 .tip-input:checked + .tip-label{
@@ -116,6 +133,7 @@ h1 {
 }
 
 
+/* SUMMARY */
 .summary-section {
     background-color: var(--cyan-very-dark);
     border-radius: var(--border-radius-400);
