@@ -21,12 +21,15 @@
   <main id="calculator-main">
     <section class="input-section">
       <div class="input-single-part">
-        <h2>Bill</h2>
-        <input type="number" name="bill" id="bill-field" class="input-number" placeholder="0">
+        <div class="top-info">
+          <h2 class="section-title">Bill</h2>
+          <h3 class="bill-input-warning warning"></h3>
+        </div>
+        <input type="number" name="bill" id="bill-field" class="input-number" placeholder="0" min="0">
       </div>
 
       <div class="input-single-part">
-        <h2>Select Tip %</h2>
+        <h2 class="section-title">Select Tip %</h2>
 
         <form action="" class="tips-grid">
           <div class="tip-option">
@@ -57,14 +60,17 @@
           <div class="tip-option">
             <input type="radio" name="tip-value" id="tip-6" class="tip-input">
             <label for="tip-6" class="tip-label">
-              <input type="number" name="tip-value-custom" id="tip-input-custom" placeholder="Custom">
+              <input type="number" name="tip-value-custom" id="tip-input-custom" placeholder="Custom" min="0">
             </label>
           </div>
         </form>
       </div>
 
       <div class="input-single-part">
-        <h2>Number of People</h2>
+        <div class="top-info">
+          <h2 class="section-title">Number of People</h2>
+          <h3 class="people-input-warning warning"></p>
+        </div>
         <input type="number" name="people-number" id="people-number" class="input-number" min="0" step="1" placeholder="0">
       </div>
     </section>

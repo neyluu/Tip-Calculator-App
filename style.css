@@ -18,6 +18,8 @@
     --cyan-grayish-very-light: hsl(189, 41%, 97%);
     --white: hsl(0, 0%, 100%);
 
+    --warning-orange-400: rgb(255, 94, 0);
+
     --spacing-200: .5rem;
     --spacing-400: 1.2rem;
 
@@ -32,14 +34,6 @@ body {
         flex-direction: column;
         justify-content: space-between;
 }
-/* @media(min-width: 768px) {
-    body {
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-} */
 
 h1 {
     display: flex;
@@ -86,10 +80,16 @@ h1 {
     }
 }
 
-.input-single-part > h2 {
+.top-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.section-title {
     font-size: .7rem;
     color: var(--cyan-grayish-dark);
 }
+
 
 #bill-field {
     background-image: url(images/icon-dollar.svg);
@@ -116,10 +116,13 @@ h1 {
     outline: none;
     border: none;
 }
-
 .input-number::placeholder {
     color: var(--cyan-grayish);
 }
+.input-number:active, .input-number:focus {
+    outline: 2px solid var(--cyan-primary);
+}
+
 
 /* SELECT TIPS */
 .tips-grid {
@@ -151,9 +154,14 @@ h1 {
 
     background-color: var(--cyan-very-dark);
     color: var(--cyan-grayish-very-light);
-    padding: .2em;
+    padding: .3em;
     border-radius: var(--border-radius-200);
     transition: all .2s;
+}
+@media(min-width: 768px) {
+    .tip-label {
+        padding: .4em;
+    }
 }
 
 .tip-input:checked + .tip-label {
@@ -163,19 +171,31 @@ h1 {
 
 #tip-input-custom {
     width: 100%;
+    height: 100%;
     text-align: right;
     outline: none;
     border: none;
+    border-radius: var(--border-radius-200);
     background-color: inherit;
     font-weight: bold;
     color: var(--cyan-very-dark);
     padding-right: .5em;
 }
+#tip-input-custom:focus, #tip-input-custom:active {
+    outline: 2px solid var(--cyan-primary);
+}
 
 .tip-label:has(#tip-input-custom) {
     background-color: var(--cyan-grayish-very-light);
+    padding: 0;
 }
 
+@media(min-width: 768px) {
+    #tip-input-custom {
+        padding: 0;
+        text-align: center;
+    }
+}
 
 /* SUMMARY */
 .summary-section {
@@ -229,6 +249,15 @@ h1 {
     padding: .3em;
     outline: none;
     border: none;
+}
+
+/* WARNINGS */
+.warning {
+    font-size: .7rem;
+    color: var(--warning-orange-400);
+}
+.input-warning, .input-warning:focus, .input-warning:active {
+    outline: 2px solid var(--warning-orange-400) !important;
 }
 
 /* FOOTER */
