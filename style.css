@@ -27,7 +27,19 @@
 
 body {
     background-color: var(--cyan-grayish-light);
+    height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 }
+/* @media(min-width: 768px) {
+    body {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+} */
 
 h1 {
     display: flex;
@@ -43,9 +55,35 @@ h1 {
     padding: var(--spacing-400);
     border-radius: var(--border-radius-400);
 }
+@media(min-width: 768px) {
+    #calculator-main {
+        height: 450px;
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+
+        display: flex;
+        gap: 3rem;
+    }
+
+    .input-section {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .summary-section {
+        width: 50%;
+    }
+}
 
 .input-single-part {
     margin-bottom: var(--spacing-400);
+}
+@media(min-width: 768px) {
+    .input-single-part {
+        margin-bottom: 0;
+    }
 }
 
 .input-single-part > h2 {
@@ -83,10 +121,16 @@ h1 {
     color: var(--cyan-grayish);
 }
 
+/* SELECT TIPS */
 .tips-grid {
     display: grid;
     grid-template-columns: repeat(2, 50%);
     gap: var(--spacing-200);
+}
+@media(min-width: 768px) {
+    .tips-grid {
+        grid-template-columns: repeat(3, calc(100% / 3));
+    }
 }
 
 .tip-option {
@@ -96,8 +140,8 @@ h1 {
 }
 
 .tip-input {
-    position: absolute;
-    visibility: hidden;
+    /* position: absolute; */
+    /* visibility: hidden; */
     display: none;
 }
 .tip-label {
@@ -112,7 +156,7 @@ h1 {
     transition: all .2s;
 }
 
-.tip-input:checked + .tip-label{
+.tip-input:checked + .tip-label {
     background-color: var(--cyan-primary);
     color: var(--cyan-very-dark);
 }
@@ -139,6 +183,13 @@ h1 {
     border-radius: var(--border-radius-400);
     padding: var(--spacing-400);
 }
+@media(min-width: 768px) {
+    .summary-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
 
 .summary-grid {
     display: grid;
@@ -163,6 +214,11 @@ h1 {
     font-weight: bold;
     font-size: 1.25rem;
 }
+@media(min-width: 768px) {
+    .amount, .tip-per-person, .tip-total {
+        font-size: 1.75rem;
+    }
+}
 
 .reset-button {
     width: 100%;
@@ -184,6 +240,14 @@ footer {
     color: var(--white);
     padding: .5rem var(--spacing-400);
 }
+@media(min-width: 768px) {
+    footer {
+        width: 100%;
+        max-width: 900px;
+        margin: 1.5rem auto 0 auto;
+    }
+}
+
 .attribution { 
     text-align: center; 
 }

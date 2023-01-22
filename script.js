@@ -6,12 +6,12 @@ const tipPerPersonField = document.querySelector(".tip-per-person")
 const tipTotalField = document.querySelector(".tip-total")
 const button = document.querySelector(".reset-button")
 
+let tip, bill, people, tipValue
+
 calculateTip()
 
 function calculateTip()
 {
-    let tip, bill, people, tipValue
-
     billField.addEventListener("input", () => {
         bill = parseFloat(billField.value)
         showTip()
@@ -50,19 +50,22 @@ function calculateTip()
 
 button.addEventListener("click", () => {
     console.log("Reset")
-    tip = 0
-    bill = 0
-    people = 0
-    tipValue = 0
+    tip = undefined
+    bill = undefined
+    people = undefined
+    tipValue = undefined
     
-    tipTotalField.textContent = "0"
     tipPerPersonField.textContent = "0"
+    tipTotalField.textContent = "0"
     
     billField.value = ""
     peopleField.value = ""
     tipCustomField.value = ""
-    tipOption.forEach(option => {
-        option.removeAttribute("checked")
+   
+    let inputs = document.querySelectorAll(".tip-input")
+    inputs.forEach(input => {
+        input.checked = false;
     })
 
+    calculateTip()
 })
